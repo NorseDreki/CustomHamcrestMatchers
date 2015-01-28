@@ -1,5 +1,5 @@
-# EspressoMatchers
-Collection of custom matchers for Espresso
+# CustomHamcrestMatchers
+Collection of custom Hamcrest matchers
 
 ## Matchers for Android's TableLayout include:
 - views N rows below the row with the specified view
