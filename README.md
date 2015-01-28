@@ -7,3 +7,6 @@ Collection of custom Hamcrest matchers
 - views in the same row as the specified view
 - views at crossing point of the specified row and column
 
+## Android version of Matchers.hasProperty():
+Due to Android-specific bug there happens a VerifyError when trying to use Hamcrest's built-in hasProperty() (this is true as least for version 1.1). 
+Look at https://groups.google.com/forum/#!topic/android-test-kit-discuss/5w1bhljm3ag for more details.
