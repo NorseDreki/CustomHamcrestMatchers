@@ -21,7 +21,7 @@ import static com.google.android.apps.common.testing.testrunner.util.Checks.chec
  */
 public class AndroidHasPropertyWithValue<T> extends TypeSafeMatcher<T> {
 
-    static <T> Matcher<T> androidHasProperty(String propertyName, Matcher<?> valueMatcher) {
+    public static <T> Matcher<T> androidHasPropertyWithValue(String propertyName, Matcher<?> valueMatcher) {
         checkNotNull(valueMatcher);
         return new AndroidHasPropertyWithValue<T>(propertyName, valueMatcher);
     }
