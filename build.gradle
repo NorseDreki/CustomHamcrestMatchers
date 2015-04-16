@@ -1,0 +1,71 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        groupId 'com.github.upelsin'
+        artifactId 'more-hamcrest-matchers'
+        inceptionYear '2015'
+        packaging 'jar'
+        licenses {
+            license {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'repo'
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+
+sourceCompatibility = 1.7
+version = '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.robolectric:android-all:5.0.0_r2-robolectric-1'
+    compile 'org.assertj:assertj-core:1.7.1'
+    compile 'org.hamcrest:hamcrest-integration:1.3'
+    compile 'org.hamcrest:hamcrest-core:1.3'
+    compile 'org.hamcrest:hamcrest-library:1.3'
+
+    testCompile('junit:junit:4.11') {
+        exclude module: 'hamcrest-core'
+    }
+    testCompile('org.robolectric:robolectric:2.4') {
+        exclude module: 'classworlds'
+        exclude module: 'commons-logging'
+        exclude module: 'httpclient'
+        exclude module: 'maven-artifact'
+        exclude module: 'maven-artifact-manager'
+        exclude module: 'maven-error-diagnostics'
+        exclude module: 'maven-model'
+        exclude module: 'maven-project'
+        exclude module: 'maven-settings'
+        exclude module: 'plexus-container-default'
+        exclude module: 'plexus-interpolation'
+        exclude module: 'plexus-utils'
+        exclude module: 'wagon-file'
+        exclude module: 'wagon-http-lightweight'
+        exclude module: 'wagon-provider-api'
+    }
+    testCompile 'org.mockito:mockito-core:1.9.5'
+}

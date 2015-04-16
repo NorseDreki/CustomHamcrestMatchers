@@ -1,4 +1,4 @@
-package com.compassrosetech.ccs.android.test.espresso;
+package com.github.upelsin.moreHamcrestMatchers.tableLayout;
 
 import android.view.View;
 import android.view.ViewGroup;

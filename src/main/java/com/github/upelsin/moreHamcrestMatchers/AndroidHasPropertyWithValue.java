@@ -1,4 +1,4 @@
-package com.compassrosetech.ccs.android.test.espresso;
+package com.github.upelsin.moreHamcrestMatchers;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -7,7 +7,8 @@ import org.hamcrest.TypeSafeMatcher;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import static com.google.android.apps.common.testing.testrunner.util.Checks.checkNotNull;
+import static org.assertj.core.util.Preconditions.checkNotNull;
+
 
 /**
  * Custom implementation of a HasPropertyWithValue matcher (copied from
