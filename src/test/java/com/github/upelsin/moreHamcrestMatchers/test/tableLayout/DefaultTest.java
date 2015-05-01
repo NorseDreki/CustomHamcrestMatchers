@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+import static com.google.android.apps.common.testing.ui.espresso.*;
 
 import static org.junit.Assert.assertTrue;
 
@@ -31,5 +32,8 @@ public class DefaultTest {
         View table = tableActivity.findViewById(MockTableActivity.ID_TABLE);
 
         assertTrue(true);
+
+
+
     }
 }
