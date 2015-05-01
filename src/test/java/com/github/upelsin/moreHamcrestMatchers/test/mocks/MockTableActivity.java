@@ -21,11 +21,14 @@ public class MockTableActivity extends Activity {
 
     public static final int NUM_ROWS = 3;
 
+    public static final int ID_TABLE = 42;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         TableLayout table = new TableLayout(this);
+        table.setId(ID_TABLE);
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 
         for (int i = 0; i < NUM_ROWS; i++) {
